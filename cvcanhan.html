@@ -14,14 +14,13 @@
 
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            line-height: 1.7;
+            color: #1f2937;
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
             min-height: 100vh;
             padding: 10px;
         }
 
-        /* Dynamic background */
         .background-overlay {
             position: fixed;
             top: 0;
@@ -30,21 +29,14 @@
             height: 100vh;
             z-index: -1;
             pointer-events: none;
-            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-            opacity: 0.6;
-            animation: bgShift 15s ease infinite;
-        }
-
-        @keyframes bgShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+            opacity: 0.7;
         }
 
         .cv-container {
             max-width: 1200px;
             margin: 20px auto;
-            background: white;
+            background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             overflow: hidden;
@@ -66,14 +58,14 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
         }
 
         .sidebar {
             background: linear-gradient(145deg, #1e293b 0%, #2d3748 100%);
-            color: white;
+            color: #f1f5f9;
             padding: 20px;
             width: 30%;
             min-width: 250px;
@@ -89,15 +81,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 20%, rgba(52, 152, 219, 0.2) 0%, transparent 70%);
-            animation: gradientShift 12s ease infinite;
+            background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
             z-index: 0;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .profile-section {
@@ -113,13 +98,13 @@
             border-radius: 50%;
             border: 4px solid transparent;
             margin: 0 auto 15px;
-            background: linear-gradient(145deg, #3b82f6, #10b981);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            background: linear-gradient(145deg, #2563eb, #10b981);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .profile-img:hover {
-            box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 0 0 25px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.6), 0 0 25px rgba(16, 185, 129, 0.4);
             transform: scale(1.05);
         }
 
@@ -131,10 +116,10 @@
         }
 
         .profile-name {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #2563eb, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
@@ -147,13 +132,13 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+            background: linear-gradient(90deg, transparent, #2563eb, transparent);
             animation: slideIn 1s ease-out;
         }
 
         .profile-title {
-            font-size: 16px;
-            color: #e2e8f0;
+            font-size: 18px;
+            color: #e5e7eb;
             margin-bottom: 20px;
             letter-spacing: 0.8px;
         }
@@ -170,30 +155,30 @@
             border-radius: 8px;
             background: rgba(255,255,255,0.05);
             transition: all 0.3s ease;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .contact-item:hover {
-            background: rgba(52, 152, 219, 0.15);
+            background: rgba(37, 99, 235, 0.15);
             transform: translateX(5px) scale(1.02);
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
         }
 
         .contact-item i {
             width: 20px;
             margin-right: 10px;
-            color: #3b82f6;
+            color: #2563eb;
             transition: all 0.3s ease;
         }
 
         .contact-item:hover i {
-            color: #10b981;
+            color: #34d399;
             transform: rotate(360deg);
         }
 
         .contact-item span {
-            font-size: 14px;
-            color: #e2e8f0;
+            font-size: 16px;
+            color: #f1f5f9;
         }
 
         .sidebar-section {
@@ -201,31 +186,31 @@
         }
 
         .sidebar-section h3 {
-            color: #3b82f6;
+            color: #2563eb;
             margin-bottom: 15px;
-            font-size: 18px;
-            border-bottom: 2px solid #3b82f6;
+            font-size: 20px;
+            border-bottom: 2px solid #2563eb;
             padding-bottom: 8px;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #2563eb, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .skill-item {
             margin-bottom: 15px;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .skill-name {
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
-            color: #e2e8f0;
+            color: #f1f5f9;
         }
 
         .skill-level {
-            font-size: 12px;
+            font-size: 14px;
             color: #10b981;
             font-weight: 600;
         }
@@ -239,7 +224,7 @@
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #2563eb, #10b981);
             border-radius: 3px;
             transition: width 1.2s ease;
             position: relative;
@@ -269,31 +254,31 @@
             padding: 8px 12px;
             background: rgba(255,255,255,0.05);
             border-radius: 6px;
-            font-size: 14px;
+            font-size: 16px;
             transition: all 0.3s ease;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .language-item:hover, .hobby-item:hover {
-            background: rgba(52, 152, 219, 0.15);
+            background: rgba(37, 99, 235, 0.15);
             transform: translateY(-2px);
         }
 
         .hobby-item i {
             width: 20px;
             margin-right: 10px;
-            color: #3b82f6;
+            color: #2563eb;
             transition: all 0.3s ease;
         }
 
         .hobby-item:hover i {
-            color: #10b981;
+            color: #34d399;
             transform: scale(1.2);
         }
 
         .hobby-item span {
-            font-size: 14px;
-            color: #e2e8f0;
+            font-size: 16px;
+            color: #f1f5f9;
         }
 
         .main-content {
@@ -305,16 +290,16 @@
         }
 
         .main-section {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .section-title {
-            font-size: 24px;
-            color: #1e293b;
+            font-size: 26px;
+            color: #1f2937;
             margin-bottom: 20px;
             padding-left: 15px;
             position: relative;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #2563eb, #10b981);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -327,7 +312,7 @@
             transform: translateY(-50%);
             width: 4px;
             height: 30px;
-            background: linear-gradient(145deg, #3b82f6, #10b981);
+            background: linear-gradient(145deg, #2563eb, #10b981);
             border-radius: 2px;
         }
 
@@ -338,7 +323,7 @@
             left: 15px;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #2563eb, #10b981);
             animation: expandWidth 1s ease-out forwards;
         }
 
@@ -347,32 +332,32 @@
         }
 
         .objective {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #4b5563;
-            background: #f8fafc;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #1f2937;
+            background: #f9fafb;
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #2563eb;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             animation: fadeInScale 0.6s ease-out;
         }
 
         .experience-item, .education-item, .project-item {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding: 20px;
-            background: white;
+            background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #2563eb;
             transition: all 0.3s ease;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .experience-item:hover, .education-item:hover, .project-item:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left-color: #10b981;
+            border-left-color: #34d399;
         }
 
         .item-header {
@@ -384,20 +369,20 @@
         }
 
         .item-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
-            color: #1e293b;
+            color: #1f2937;
             margin-bottom: 6px;
         }
 
         .item-company {
-            font-size: 15px;
-            color: #3b82f6;
+            font-size: 16px;
+            color: #2563eb;
             margin-bottom: 6px;
         }
 
         .item-date {
-            font-size: 13px;
+            font-size: 14px;
             color: #6b7280;
             background: #f1f5f9;
             padding: 4px 10px;
@@ -405,9 +390,9 @@
         }
 
         .item-description {
-            color: #4b5563;
-            line-height: 1.6;
-            font-size: 14px;
+            color: #1f2937;
+            line-height: 1.8;
+            font-size: 16px;
         }
 
         .item-description ul {
@@ -416,8 +401,8 @@
         }
 
         .item-description li {
-            margin-bottom: 6px;
-            animation: fadeInScale 0.6s ease-out forwards;
+            margin-bottom: 8px;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .tech-stack {
@@ -428,11 +413,11 @@
         }
 
         .tech-tag {
-            background: linear-gradient(145deg, #3b82f6, #10b981);
-            color: white;
-            padding: 5px 12px;
+            background: linear-gradient(145deg, #2563eb, #10b981);
+            color: #ffffff;
+            padding: 6px 14px;
             border-radius: 15px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
@@ -441,7 +426,7 @@
 
         .tech-tag:hover {
             transform: translateY(-2px) scale(1.1);
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         .certificates {
@@ -451,14 +436,14 @@
         }
 
         .certificate-item {
-            background: white;
+            background: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             text-align: center;
-            border-top: 4px solid #f59e0b;
+            border-top: 4px solid #f97316;
             transition: all 0.3s ease;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .certificate-item:hover {
@@ -467,8 +452,8 @@
         }
 
         .certificate-icon {
-            font-size: 36px;
-            color: #f59e0b;
+            font-size: 40px;
+            color: #f97316;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
         }
@@ -478,12 +463,12 @@
         }
 
         .download-btn {
-            background: linear-gradient(145deg, #ef4444, #b91c1c);
-            color: white;
-            padding: 12px 30px;
+            background: linear-gradient(145deg, #f97316, #ea580c);
+            color: #ffffff;
+            padding: 14px 32px;
             border: none;
             border-radius: 25px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -497,11 +482,10 @@
 
         .download-btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
             animation: pulse 1.5s infinite;
         }
 
-        /* Tabbed Sections */
         .tab-section {
             opacity: 0;
             transform: translateX(100px);
@@ -511,7 +495,7 @@
             width: 100%;
             left: 0;
             top: 0;
-            background: white;
+            background: #ffffff;
             padding: 20px;
         }
 
@@ -522,15 +506,14 @@
             position: relative;
         }
 
-        /* Mobile Navigation */
         .mobile-nav {
             display: none;
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
-            padding: 8px 0;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+            padding: 10px 0;
             z-index: 100;
             box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
         }
@@ -538,17 +521,17 @@
         .nav-btn {
             flex: 1;
             text-align: center;
-            padding: 8px 0;
-            font-size: 12px;
-            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #ffffff;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .nav-btn i {
             display: block;
-            font-size: 18px;
-            margin-bottom: 2px;
+            font-size: 20px;
+            margin-bottom: 4px;
             transition: transform 0.3s ease;
         }
 
@@ -561,12 +544,11 @@
             border-radius: 12px;
         }
 
-        /* Particle Effect */
         .particle {
             position: absolute;
             width: 4px;
             height: 4px;
-            background: rgba(52, 152, 219, 0.5);
+            background: rgba(37, 99, 235, 0.5);
             border-radius: 50%;
             pointer-events: none;
             animation: float 6s ease-in-out infinite;
@@ -579,27 +561,26 @@
             100% { transform: translateY(0); opacity: 0.5; }
         }
 
-        /* Mobile-Specific Styles */
         @media (max-width: 768px) {
             .cv-container {
                 flex-direction: column;
-                margin: 10px;
+                margin: 15px;
             }
 
             .sidebar {
                 width: 100%;
-                max-height: 300px;
-                padding: 15px;
+                max-height: 350px;
+                padding: 20px;
             }
 
             .main-content {
                 width: 100%;
-                padding: 15px;
-                min-height: 500px;
+                padding: 20px;
+                min-height: 600px;
             }
 
             .section-title {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .mobile-nav {
@@ -607,39 +588,105 @@
             }
 
             .download-btn {
-                margin: 15px auto;
+                margin: 20px auto;
+                font-size: 18px;
+                padding: 12px 30px;
             }
 
             .profile-img {
-                width: 90px;
-                height: 90px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile-name {
+                font-size: 26px;
+            }
+
+            .profile-title {
+                font-size: 18px;
+            }
+
+            .contact-item span {
+                font-size: 18px;
+            }
+
+            .skill-name {
+                font-size: 18px;
+            }
+
+            .skill-level {
+                font-size: 16px;
+            }
+
+            .language-item, .hobby-item {
+                font-size: 18px;
+            }
+
+            .hobby-item span {
+                font-size: 18px;
+            }
+
+            .objective {
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            .item-title {
+                font-size: 22px;
+            }
+
+            .item-company {
+                font-size: 18px;
+            }
+
+            .item-date {
+                font-size: 16px;
+            }
+
+            .item-description {
+                font-size: 18px;
+            }
+
+            .tech-tag {
+                font-size: 16px;
+                padding: 8px 16px;
             }
         }
 
         @media (max-width: 480px) {
             .main-content {
-                padding: 10px;
+                padding: 15px;
             }
 
             .sidebar {
-                padding: 10px;
+                padding: 15px;
             }
 
             .section-title {
-                font-size: 18px;
+                font-size: 22px;
             }
 
             .objective {
-                padding: 15px;
-                font-size: 14px;
+                font-size: 16px;
+                padding: 18px;
+                line-height: 1.9;
             }
 
             .item-title {
+                font-size: 20px;
+            }
+
+            .item-company {
                 font-size: 16px;
             }
 
-            .item-company, .item-date {
-                font-size: 12px;
+            .item-date {
+                font-size: 14px;
+            }
+
+            .item-description {
+                font-size: 16px;
+                line-height: 1.9;
             }
 
             .main-section {
@@ -647,16 +694,49 @@
             }
 
             .profile-img {
-                width: 80px;
-                height: 80px;
+                width: 90px;
+                height: 90px;
             }
 
             .profile-name {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             .profile-title {
+                font-size: 16px;
+            }
+
+            .contact-item span {
+                font-size: 16px;
+            }
+
+            .skill-name {
+                font-size: 16px;
+            }
+
+            .skill-level {
                 font-size: 14px;
+            }
+
+            .language-item, .hobby-item {
+                font-size: 16px;
+            }
+
+            .hobby-item span {
+                font-size: 16px;
+            }
+
+            .tech-tag {
+                font-size: 14px;
+                padding: 6px 14px;
+            }
+
+            .nav-btn {
+                font-size: 13px;
+            }
+
+            .nav-btn i {
+                font-size: 18px;
             }
         }
 
@@ -668,14 +748,14 @@
         }
 
         .achievement-card {
-            background: white;
+            background: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             text-align: center;
             border-top: 4px solid #10b981;
             transition: all 0.3s ease;
-            animation: fadeInScale 0.6s ease-out forwards;
+            animation: fadeInScale 0.6s ease-out;
         }
 
         .achievement-card:hover {
@@ -684,11 +764,11 @@
         }
 
         .achievement-number {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
             color: #10b981;
             margin-bottom: 10px;
-            background: linear-gradient(45deg, #10b981, #3b82f6);
+            background: linear-gradient(45deg, #10b981, #2563eb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             transition: transform 0.3s ease;
@@ -699,20 +779,19 @@
         }
 
         .achievement-label {
-            font-size: 13px;
+            font-size: 14px;
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Print Styles */
         @media print {
             .background-overlay, .mobile-nav, .particle {
                 display: none !important;
             }
 
             body {
-                background: white !important;
+                background: #ffffff !important;
                 padding: 0 !important;
             }
 
@@ -1108,7 +1187,7 @@
                             <span class="skill-level">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-progress" style="width: 90%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
