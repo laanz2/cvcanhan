@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do Ngoc Lan - Full Stack Developer</title>
+    <title>Đỗ Ngọc Lân - Sinh Viên CNTT</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -603,6 +603,34 @@
             animation: floatGlow 1.5s ease-in-out infinite;
         }
 
+        /* Hiệu ứng chuyển tab cho section */
+        .tab-section {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1);
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background: transparent;
+        }
+        .tab-section.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+            z-index: 3;
+            box-shadow: 0 8px 32px rgba(59,130,246,0.08), 0 1.5px 8px rgba(16,185,129,0.08);
+            border-radius: 18px;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                position: relative;
+                min-height: 600px;
+            }
+        }
+
         @media (max-width: 768px) {
             .cv-container {
                 grid-template-columns: 1fr;
@@ -610,7 +638,8 @@
             }
             
             .sidebar {
-                padding: 35px 25px;
+                max-height: 400px;
+                overflow-y: auto;
             }
             
             .main-content {
@@ -621,6 +650,34 @@
                 font-size: 26px;
             }
         }
+
+        @media (max-width: 480px) {
+    .main-content {
+        padding: 15px 5px;
+    }
+    .sidebar {
+        padding: 20px 8px;
+    }
+    .section-title {
+        font-size: 20px;
+    }
+    .objective {
+        padding: 15px;
+        font-size: 15px;
+    }
+    .item-title {
+        font-size: 17px;
+    }
+    .item-company, .item-date {
+        font-size: 13px;
+    }
+    .main-section {
+        margin-bottom: 25px;
+    }
+    .achievement-card, .certificate-item {
+        padding: 12px;
+    }
+}
 
         .achievements {
             display: grid;
@@ -688,6 +745,97 @@
                 margin: 0 !important;
             }
         }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 0;
+            z-index: 100;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #4b5563;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-btn i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 3px;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s;
+        }
+
+        .nav-btn:hover i, .nav-btn.active i {
+            transform: scale(1.25) rotate(-8deg);
+            color: #f59e0b;
+        }
+
+        .nav-btn.active {
+            color: #fff;
+            text-shadow: 0 0 8px #10b981, 0 0 16px #3b82f6;
+            background: rgba(16,185,129,0.12);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(16,185,129,0.15);
+            position: relative;
+            z-index: 2;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-btn:hover {
+            color: #10b981;
+        }
+
+        .nav-btn:active::after {
+            content: '';
+            position: absolute;
+            left: 50%; top: 50%;
+            width: 0; height: 0;
+            background: rgba(59,130,246,0.15);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple-effect 0.5s linear;
+            z-index: 1;
+        }
+        @keyframes ripple-effect {
+            to {
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+            }
+        }
+        @media (max-width: 768px) {
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #3b82f6, #10b981, #f59e0b, #3b82f6);
+        background-size: 400% 400%;
+        animation: navGradientMove 10s ease infinite;
+        border-top: 1px solid #e2e8f0;
+        padding: 10px 0;
+        z-index: 100;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+@keyframes navGradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
     </style>
 </head>
 <body>
@@ -1050,6 +1198,13 @@
         </div>
     </div>
 
+    <div class="mobile-nav">
+        <div class="nav-glow"></div>
+        <button class="nav-btn active" data-section="home"><i class="fas fa-home"></i><span>Trang chủ</span></button>
+        <button class="nav-btn" data-section="skills"><i class="fas fa-code"></i><span>Kỹ năng</span></button>
+        <button class="nav-btn" data-section="contact"><i class="fas fa-envelope"></i><span>Liên hệ</span></button>
+    </div>
+
     <script>
         // Animate skill bars on scroll
         function animateSkills() {
@@ -1176,7 +1331,6 @@
                 particle.style.position = 'absolute';
                 particle.style.width = '6px';
                 particle.style.height = '6px';
-                particle.style.background = 'rgba(52, 152, 219, 0.4)';
                 particle.style.borderRadius = '50%';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
@@ -1203,6 +1357,24 @@
                 mainContent.style.transform = `translateY(${scrolled * 0.04}px)`;
             }
         });
+
+        // Navigation button click event
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Ẩn tất cả section
+        document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+        // Hiện section tương ứng
+        if(this.dataset.section === 'home') document.getElementById('home-section').classList.add('active');
+        if(this.dataset.section === 'skills') document.getElementById('skills-section').classList.add('active');
+        if(this.dataset.section === 'contact') document.getElementById('contact-section').classList.add('active');
+        window.scrollTo(0,0);
+    });
+});
+
+        // Show home section by default
+        document.getElementById('home-section').style.display = 'block';
     </script>
 </body>
 </html>
